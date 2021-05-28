@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.TaskDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.TaskEntity" id="taskMap">
+        <result property="taskId" column="task_id"/>
+        <result property="unionId" column="union_id"/>
+        <result property="time" column="time"/>
+        <result property="orderNum" column="order_num"/>
+    </resultMap>
+    <select id="selectTaskIds" resultType="java.lang.Integer">
+        select `task_id` from `task`
+    </select>
+    <select id="selectUnionId" resultType="java.lang.Integer">
+        select `union_id` from `task` where `task_id`=#{taskId}
+    </select>
+    <select id="selectTimeByTaskId" resultType="java.util.Date">
+        select `time` from `task` where `task_id`=#{taskId}
+    </select>
+
+</mapper>

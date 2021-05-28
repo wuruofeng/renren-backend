@@ -27,6 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -40,6 +41,8 @@ import java.util.Map;
  */
 @Service("sysUserService")
 public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> implements SysUserService {
+	@Resource
+	SysUserDao sysUserDao;
 	@Autowired
 	private SysUserRoleService sysUserRoleService;
 	@Autowired
@@ -121,7 +124,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		return this.update(userEntity,
 				new QueryWrapper<SysUserEntity>().eq("user_id", userId).eq("password", password));
 	}
-	
+
+	@Override
+	public List<String> listUserFullname() {
+		List<String> userFullnames = sysUserDao.selectAllUserFullname();
+		return userFullnames;
+	}
+
 	/**
 	 * 检查角色是否越权
 	 */

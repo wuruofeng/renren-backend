@@ -20,5 +20,11 @@
 	<select id="queryByUserName" resultType="io.renren.modules.sys.entity.SysUserEntity">
 		select * from sys_user where username = #{username}
 	</select>
+	<select id="selectUserFullnameByUserId" resultType="java.lang.String">
+		select `user_fullname` from `sys_user` where `user_id`=#{userId}
+	</select>
+	<select id="selectAllUserFullname" resultType="java.lang.String">
+		select `user_fullname` from `sys_user`
+	</select>
 
 </mapper>

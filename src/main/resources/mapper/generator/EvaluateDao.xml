@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.EvaluateDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.EvaluateEntity" id="evaluateMap">
+        <result property="evaluateId" column="evaluate_id"/>
+        <result property="unionId" column="union_id"/>
+        <result property="evaluatePartOne" column="evaluate_part_one"/>
+        <result property="evaluatePartTwo" column="evaluate_part_two"/>
+        <result property="evaluatePartThree" column="evaluate_part_three"/>
+        <result property="evaluatePartFour" column="evaluate_part_four"/>
+        <result property="evaluatePartFive" column="evaluate_part_five"/>
+        <result property="evaluatePartSix" column="evaluate_part_six"/>
+        <result property="evaluatePartSeven" column="evaluate_part_seven"/>
+        <result property="evaluateSum" column="evaluate_sum"/>
+        <result property="suggest" column="suggest"/>
+        <result property="courseAbstract" column="course_abstract"/>
+        <result property="userId" column="user_id"/>
+        <result property="relateId" column="relate_id"/>
+
+    </resultMap>
+    <select id="selectByRelateId" resultType="io.renren.modules.generator.entity.EvaluateEntity">
+        select * from `evaluate` where `relate_id`=#{relateId}
+    </select>
+    <select id="selectEvaluateId" resultType="java.lang.Integer">
+        select `evaluate_id` from `evaluate`
+    </select>
+    <select id="selectEvaluatePartOneById" resultType="java.lang.Integer">
+        select `evaluate_part_one` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartTwoById" resultType="java.lang.Integer">
+        select `evaluate_part_two` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartThreeById" resultType="java.lang.Integer">
+        select `evaluate_part_three` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartFourById" resultType="java.lang.Integer">
+        select `evaluate_part_four` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartFiveById" resultType="java.lang.Integer">
+        select `evaluate_part_five` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartSixById" resultType="java.lang.Integer">
+        select `evaluate_part_six` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluatePartSevenById" resultType="java.lang.Integer">
+        select `evaluate_part_seven` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectEvaluateSumById" resultType="java.lang.Integer">
+        select `evaluate_sum` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectUserIdByEvaluateId" resultType="java.lang.Integer">
+        select `user_id` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+    <select id="selectUnionIdByEvaluateId" resultType="java.lang.Integer">
+        select `union_id` from `evaluate` where `evaluate_id`=#{evaluateId}
+    </select>
+</mapper>

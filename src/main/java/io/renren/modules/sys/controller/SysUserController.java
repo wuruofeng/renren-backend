@@ -152,4 +152,11 @@ public class SysUserController extends AbstractController {
 		
 		return R.ok();
 	}
+
+	@RequestMapping("/getFullnameList")
+	@RequiresPermissions("")
+	public List<String> listUserFullname(){
+		List<String> usernames = sysUserService.listUserFullname();
+		return usernames;
+	}
 }

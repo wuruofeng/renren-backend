@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.ClassDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.ClassEntity" id="classMap">
+        <result property="classId" column="class_id"/>
+        <result property="classGrade" column="class_grade"/>
+        <result property="classSpeciality" column="class_speciality"/>
+        <result property="className" column="class_name"/>
+    </resultMap>
+    <select id="selectClassGradeByClassId" resultType="java.lang.String">
+        select `class_grade` from `class`
+        where `class_id`=#{classId}
+    </select>
+    <select id="selectClassSpecialityByClassId" resultType="java.lang.String">
+        select `class_speciality` from `class`
+        where `class_id`=#{classId}
+    </select>
+    <select id="selectClassNameByClassId" resultType="java.lang.String">
+        select `class_name` from `class`
+        where `class_id`=#{classId}
+    </select>
+    <select id="selectClassId" resultType="java.lang.Integer">
+        select `class_id` from `class`
+    </select>
+
+</mapper>

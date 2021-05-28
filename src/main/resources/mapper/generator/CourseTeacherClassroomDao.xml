@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.CourseTeacherClassroomDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.CourseTeacherClassroomEntity" id="courseTeacherClassroomMap">
+        <result property="unionId" column="union_id"/>
+        <result property="courseId" column="course_id"/>
+        <result property="teacherId" column="teacher_id"/>
+        <result property="classroomId" column="classroom_id"/>
+        <result property="date" column="date"/>
+        <result property="week" column="week"/>
+        <result property="orderNum" column="order_num"/>
+    </resultMap>
+    <select id="listUnionIds" resultType="java.lang.Integer">
+        select `union_id` from `course_teacher_classroom`;
+    </select>
+    <select id="selectTeacherIdByUnionId" resultType="java.lang.Integer">
+        select `teacher_id` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+    <select id="selectCourseIdByUnionId" resultType="java.lang.Integer">
+        select `course_id` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+    <select id="selectClassIdByUnionId" resultType="java.lang.Integer">
+        select `class_id` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+    <select id="selectClassroomIdByUnionId" resultType="java.lang.Integer">
+        select `classroom_id` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+    <select id="selectWeekByUnionId" resultType="java.lang.String">
+        select `week` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+    <select id="selectOrderNumByUnionId" resultType="java.lang.String">
+        select `order_num` from `course_teacher_classroom`
+        where `union_id`=#{unionId}
+    </select>
+
+</mapper>
