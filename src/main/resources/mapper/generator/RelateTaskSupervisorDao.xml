@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.RelateTaskSupervisorDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.RelateTaskSupervisorEntity" id="relateTaskSupervisorMap">
+        <result property="relateId" column="relate_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="taskId" column="task_id"/>
+    </resultMap>
+
+    <select id="queryByUserId" resultType="io.renren.modules.generator.entity.RelateTaskSupervisorEntity">
+		select * from relate_task_supervisor where user_id = #{user_id}
+	</select>
+    <update id="updateStatusByRelateId">
+        update `relate_task_supervisor`
+        set `status`=1
+        where `relate_id`=#{relateId}
+    </update>
+
+</mapper>

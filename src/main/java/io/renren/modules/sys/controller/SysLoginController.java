@@ -64,16 +64,16 @@ public class SysLoginController extends AbstractController {
 	 */
 	@PostMapping("/sys/login")
 	public Map<String, Object> login(@RequestBody SysLoginForm form)throws IOException {
-		boolean captcha = sysCaptchaService.validate(form.getUuid(), form.getCaptcha());
-		if(!captcha){
-			return R.error("验证码不正确");
-		}
+//		boolean captcha = sysCaptchaService.validate(form.getUuid(), form.getCaptcha());
+//		if(!captcha){
+//			return R.error("验证码不正确");
+//		}
 
 		//用户信息
 		SysUserEntity user = sysUserService.queryByUserName(form.getUsername());
 
 		//账号不存在、密码错误
-		if(user == null || !user.getPassword().equals(new Sha256Hash(form.getPassword(), user.getSalt()).toHex())) {
+		if(user == null || !user.getPassword().equals(form.getPassword())) {
 			return R.error("账号或密码不正确");
 		}
 
@@ -84,6 +84,7 @@ public class SysLoginController extends AbstractController {
 
 		//生成token，并保存到数据库
 		R r = sysUserTokenService.createToken(user.getUserId());
+		r.put("userid",user.getUserId());
 		return r;
 	}
 

@@ -18,6 +18,165 @@ securityDefinitions:
 
 #定义接口数据
 paths:
+  /generator/evaluate/save:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: relateId
+          description: relateId
+          in: path
+          type: integer
+          required: true
+  /generator/evaluate/relatedetail/{relateId}:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: relateId
+          description: relateId
+          in: path
+          type: integer
+          required: true
+  /generator/evaluate/detail/{id}:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          description: id
+          in: path
+          type: integer
+          required: true
+  /sys/user/getInfoByUsername/{user_name}:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: user_name
+          description: user_name
+          in: path
+          type: String
+          required: true
+  /generator/teacher/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/supervisor/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/supervisepic/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/evaluate/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/course/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/classroom/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/class/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/task/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/relatetasksupervisor/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+  /generator/courseteacherclassroom/list:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+
+  /generator/courseteacherclassroom/info/{id}:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          description: id
+          in: path
+          type: integer
+          required: true
+  /generator/relatetasksupervisor/getListByuserId/{user_id}:
+    get:
+      tags:
+        - test
+      summary: test
+      produces:
+        - application/json
+      parameters:
+        - name: user_id
+          description: user_id
+          in: path
+          type: integer
+          required: true
   /captcha.jpg:
     get:
       tags:

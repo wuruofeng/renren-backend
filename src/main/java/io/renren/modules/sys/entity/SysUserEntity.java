@@ -44,6 +44,12 @@ public class SysUserEntity implements Serializable {
 	private String username;
 
 	/**
+	 * 用户真名
+	 */
+	@NotBlank(message = "用户真名不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	private String userFullname;
+
+	/**
 	 * 密码
 	 */
 	@NotBlank(message="密码不能为空", groups = AddGroup.class)

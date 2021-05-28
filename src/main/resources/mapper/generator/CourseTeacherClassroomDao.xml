@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.CourseTeacherClassroomDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.CourseTeacherClassroomEntity" id="courseTeacherClassroomMap">
+        <result property="unionId" column="union_id"/>
+        <result property="courseId" column="course_id"/>
+        <result property="teacherId" column="teacher_id"/>
+        <result property="classroomId" column="classroom_id"/>
+        <result property="date" column="date"/>
+        <result property="week" column="week"/>
+        <result property="orderNum" column="order_num"/>
+    </resultMap>
+
+
+</mapper>

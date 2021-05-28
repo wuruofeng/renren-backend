@@ -8,8 +8,14 @@
 
 package io.renren;
 
+//import com.bstek.ureport.console.UReportServlet;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+
 
 
 @SpringBootApplication
@@ -19,4 +25,7 @@ public class RenrenApplication {
 		SpringApplication.run(RenrenApplication.class, args);
 	}
 
+
+
 }
+
