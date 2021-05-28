@@ -50,13 +50,20 @@ public class CourseTeacherClassroomController {
         List<UnionRspDTO> unionRspDTOS = courseTeacherClassroomService.listUnionCousrse();
         return unionRspDTOS;
     }
+    @RequestMapping("/list1")
+//    @RequiresPermissions("generator:courseteacherclassroom:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = courseTeacherClassroomService.queryPage(params);
+
+        return R.ok().put("page", page);
+    }
 
 
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("generator:courseteacherclassroom:info")
+//    @RequiresPermissions("generator:courseteacherclassroom:info")
     public R info(@PathVariable("id") Integer id){
 		CourseTeacherClassroomEntity courseTeacherClassroom = courseTeacherClassroomService.getById(id);
 

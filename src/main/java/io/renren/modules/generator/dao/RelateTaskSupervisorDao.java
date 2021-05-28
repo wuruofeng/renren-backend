@@ -21,5 +21,7 @@ public interface RelateTaskSupervisorDao extends BaseMapper<RelateTaskSupervisor
     Integer selectTaskIdByRelateId(@Param("relateId") Integer relateId);
     Integer selectUserIdByRelateId(@Param("relateId") Integer relateId);
     Integer selectStatusByRelateId(@Param("relateId") Integer relateId);
+
+    RelateTaskSupervisorEntity queryByUserId(Integer user_id);
     int updateStatusByRelateId(@Param("relateId")Integer relateId);
 }

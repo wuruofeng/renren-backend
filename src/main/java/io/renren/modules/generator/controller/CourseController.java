@@ -36,7 +36,7 @@ public class CourseController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("generator:course:list")
+//    @RequiresPermissions("generator:course:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = courseService.queryPage(params);
 

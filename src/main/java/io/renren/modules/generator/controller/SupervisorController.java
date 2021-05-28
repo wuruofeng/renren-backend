@@ -35,7 +35,7 @@ public class SupervisorController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("generator:supervisor:list")
+//    @RequiresPermissions("generator:supervisor:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = supervisorService.queryPage(params);
 

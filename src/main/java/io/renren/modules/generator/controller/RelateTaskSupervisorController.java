@@ -51,6 +51,15 @@ public class RelateTaskSupervisorController {
         return relateTaskSupervisorRspDTOS;
     }
 
+    @RequestMapping("/list1")
+//    @RequiresPermissions("generator:relatetasksupervisor:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = relateTaskSupervisorService.queryPage(params);
+
+        return R.ok().put("page", page);
+    }
+
+
     /**
      * 信息
      */

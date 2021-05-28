@@ -10,7 +10,6 @@ import java.io.Serializable;
 @TableName("relate_task_supervisor")
 public class RealateTaskSupervisor implements Serializable {
     private static final long serialVersionUID = 1L;
-
     @TableId
     private Integer relateId;
 

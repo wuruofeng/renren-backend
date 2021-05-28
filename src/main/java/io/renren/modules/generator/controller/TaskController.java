@@ -47,7 +47,13 @@ public class TaskController {
     @RequiresPermissions("generator:task:list")
     public List<TaskListRspDTO> list(){
         List<TaskListRspDTO> taskListRspDTOs = taskService.listTask();
+    }
         return taskListRspDTOs;
+    @RequestMapping("/list1")
+//    @RequiresPermissions("generator:task:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = taskService.queryPage(params);
+        return R.ok().put("page", page);
     }
 
 

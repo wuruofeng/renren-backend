@@ -1,12 +1,18 @@
 package io.renren.modules.generator.service.impl;
 
-import io.renren.modules.generator.dto.TeacherIdNameRspDTO;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
+import java.util.stream.Collectors;
+import io.renren.modules.generator.dto.TeacherIdNameRspDTO;
+import java.util.ArrayList;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

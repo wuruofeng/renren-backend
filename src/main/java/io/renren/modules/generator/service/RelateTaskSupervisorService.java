@@ -20,5 +20,6 @@ public interface RelateTaskSupervisorService extends IService<RelateTaskSupervis
     PageUtils queryPage(Map<String, Object> params);
 
     List<RelateTaskSupervisorRspDTO> listItems();
+    List<RelateTaskSupervisorEntity> queryByUserId(Integer user_id);
 }
 

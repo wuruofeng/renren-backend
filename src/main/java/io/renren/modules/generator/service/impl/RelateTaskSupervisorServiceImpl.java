@@ -4,6 +4,7 @@ import io.renren.modules.generator.dao.*;
 import io.renren.modules.generator.dto.RelateTaskSupervisorRspDTO;
 import io.renren.modules.sys.dao.SysUserDao;
 import org.springframework.stereotype.Service;
+import io.renren.modules.sys.entity.SysUserEntity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +18,7 @@ import io.renren.common.utils.Query;
 
 import io.renren.modules.generator.entity.RelateTaskSupervisorEntity;
 import io.renren.modules.generator.service.RelateTaskSupervisorService;
-
+import io.renren.modules.generator.dao.RelateTaskSupervisorDao;
 import javax.annotation.Resource;
 
 
@@ -94,6 +95,11 @@ public class RelateTaskSupervisorServiceImpl extends ServiceImpl<RelateTaskSuper
 
         }
         return relateTaskSupervisorRspDTOS;
+    }
+
+    @Override
+    public List<RelateTaskSupervisorEntity> queryByUserId(Integer user_id) {
+        return (List<RelateTaskSupervisorEntity>) baseMapper.queryByUserId(user_id);
     }
 
 }

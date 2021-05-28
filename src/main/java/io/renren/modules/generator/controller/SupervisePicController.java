@@ -35,7 +35,7 @@ public class SupervisePicController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("generator:supervisepic:list")
+//    @RequiresPermissions("generator:supervisepic:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = supervisePicService.queryPage(params);
 

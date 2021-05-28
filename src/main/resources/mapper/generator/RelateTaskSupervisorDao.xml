@@ -22,6 +22,10 @@
     <select id="selectStatusByRelateId" resultType="java.lang.Integer">
         select `status` from  `relate_task_supervisor` where  `relate_id`=#{relateId}
     </select>
+
+    <select id="queryByUserId" resultType="io.renren.modules.generator.entity.RelateTaskSupervisorEntity">
+		select * from relate_task_supervisor where user_id = #{user_id}
+	</select>
     <update id="updateStatusByRelateId">
         update `relate_task_supervisor`
         set `status`=1

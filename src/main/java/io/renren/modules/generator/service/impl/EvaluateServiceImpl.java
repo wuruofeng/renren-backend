@@ -92,7 +92,6 @@ public class EvaluateServiceImpl extends ServiceImpl<EvaluateDao, EvaluateEntity
         teacherInfoRspDTO.setTeacherName(teacherEntity.getTeacherName());
         teacherInfoRspDTO.setTeacherTitle(teacherEntity.getTeacherTitle());
         teacherInfoRspDTO.setTeacherDepartment(teacherEntity.getTeacherDepartment());
-
         //教室
         ClassroomEntity classroomEntity = classroomDao.selectById(classroomId);
         ClassroomInfoRspDTO classroomInfoRspDTO = new ClassroomInfoRspDTO();

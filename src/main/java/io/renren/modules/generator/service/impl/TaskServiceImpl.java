@@ -15,6 +15,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.Query;
 
+import io.renren.modules.generator.dao.TaskDao;
 import io.renren.modules.generator.entity.TaskEntity;
 import io.renren.modules.generator.service.TaskService;
 import sun.java2d.pipe.SpanClipRenderer;

@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.Query;
 
+import io.renren.modules.generator.dao.CourseTeacherClassroomDao;
 import io.renren.modules.generator.entity.CourseTeacherClassroomEntity;
 import io.renren.modules.generator.service.CourseTeacherClassroomService;
 

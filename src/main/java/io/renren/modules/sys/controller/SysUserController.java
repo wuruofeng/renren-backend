@@ -42,6 +42,13 @@ public class SysUserController extends AbstractController {
 	@Autowired
 	private SysUserRoleService sysUserRoleService;
 
+	// 根据用户名获取信息
+	@GetMapping("/getInfoByUsername/{user_name}")
+	public R res(@PathVariable("user_name") String user_name){
+		SysUserEntity user = sysUserService.queryByUserName(user_name);
+		return R.ok().put("user", user);
+	}
+
 
 	/**
 	 * 所有用户列表

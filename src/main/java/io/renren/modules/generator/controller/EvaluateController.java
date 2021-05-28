@@ -51,7 +51,7 @@ public class EvaluateController {
 //    }
     @ApiOperation("列表")
     @RequestMapping("/list")
-    @RequiresPermissions("generator:evaluate:list")
+    // @RequiresPermissions("generator:evaluate:list")
     public List<EvaluateListDTO> list(){
         List<EvaluateListDTO> evaluateListDTOS = evaluateService.listAll();
         return evaluateListDTOS;
@@ -81,12 +81,11 @@ public class EvaluateController {
 
     @ApiOperation("根据relate_id查询评价表")
 
-    @RequestMapping("/")
+    @RequestMapping("/relatedetail/{relateId}")
     public R detailByRelateId(@PathVariable("relateId") Integer relateId){
         EvaluateDetailRspDTO evaluateDetailRspDTO = evaluateService.getDetailByRelateId(relateId);
         return R.ok().put("evaluateDetailRspDTO", evaluateDetailRspDTO);
     }
-
 
     /**
      * 保存

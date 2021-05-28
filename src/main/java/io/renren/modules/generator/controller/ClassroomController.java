@@ -42,7 +42,7 @@ public class ClassroomController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("generator:classroom:list")
+//    @RequiresPermissions("generator:classroom:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = classroomService.queryPage(params);
 
@@ -64,10 +64,9 @@ public class ClassroomController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("generator:classroom:info")
+//    @RequiresPermissions("generator:classroom:info")
     public R info(@PathVariable("id") Integer id){
 		ClassroomEntity classroom = classroomService.getById(id);
-
         return R.ok().put("classroom", classroom);
     }
 
