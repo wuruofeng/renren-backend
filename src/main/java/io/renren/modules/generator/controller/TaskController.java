@@ -45,10 +45,10 @@ public class TaskController {
 //    }
     @RequestMapping("/list")
     @RequiresPermissions("generator:task:list")
-    public List<TaskListRspDTO> list(){
+    public List<TaskListRspDTO> list() {
         List<TaskListRspDTO> taskListRspDTOs = taskService.listTask();
-    }
         return taskListRspDTOs;
+    }
     @RequestMapping("/list1")
 //    @RequiresPermissions("generator:task:list")
     public R list(@RequestParam Map<String, Object> params){

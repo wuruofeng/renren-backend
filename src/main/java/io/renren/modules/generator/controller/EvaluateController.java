@@ -100,7 +100,7 @@ public class EvaluateController {
 //    }
     @ApiOperation("保存")
     @RequestMapping("/save")
-    @RequiresPermissions("generator:evaluate:save")
+//    @RequiresPermissions("generator:evaluate:save")
     public R save(@RequestBody EvaluateEntity evaluate){
 		evaluateService.saveEvaluateEntity(evaluate);
         return R.ok();
